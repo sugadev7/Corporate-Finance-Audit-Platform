@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+
+```
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Corporate Finance Analytics Hub</title>
+
+<link rel="stylesheet" href="assets/css/style.css">
+
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+```
+
+</head>
+
+<body>
+
+<div class="container">
+
+```
+<aside class="sidebar">
+
+    <div class="logo">
+        FinanceHub
+    </div>
+
+    <ul>
+        <li><a href="index.html">📊 Dashboard</a></li>
+        <li><a href="budget.html">💰 Budget vs Actual</a></li>
+        <li><a href="audit.html">🏦 Audit Tracker</a></li>
+        <li><a href="dcf.html">📈 DCF Valuation</a></li>
+        <li><a href="reports.html">📑 Reports</a></li>
+    </ul>
+
+</aside>
+
+<main class="main">
+
+    <div class="page-header">
+
+        <h1>Corporate Finance Dashboard</h1>
+
+        <p>
+            FP&A | Audit | Corporate Finance Intelligence Platform
+        </p>
+
+        <p class="credit-line">
+            Developed by <strong>Sugadev V</strong> |
+            MBA Finance |
+            📧 vsugadev.77@gmail.com
+        </p>
+
+    </div>
+
+    <section class="cards">
+
+        <div class="card">
+            <h3>Total Revenue</h3>
+            <p id="revenueCard">₹0</p>
+        </div>
+
+        <div class="card">
+            <h3>EBITDA</h3>
+            <p id="ebitdaCard">₹0</p>
+        </div>
+
+        <div class="card">
+            <h3>EBITDA Margin</h3>
+            <p id="marginCard">0%</p>
+        </div>
+
+        <div class="card">
+            <h3>Cash Flow</h3>
+            <p id="cashflowCard">₹0</p>
+        </div>
+
+    </section>
+
+    <section class="section">
+
+        <h2>Monthly Revenue Input</h2>
+
+        <div class="form-grid">
+
+            <input type="number" id="jan" placeholder="January">
+            <input type="number" id="feb" placeholder="February">
+            <input type="number" id="mar" placeholder="March">
+
+            <input type="number" id="apr" placeholder="April">
+            <input type="number" id="may" placeholder="May">
+            <input type="number" id="jun" placeholder="June">
+
+            <input type="number" id="jul" placeholder="July">
+            <input type="number" id="aug" placeholder="August">
+            <input type="number" id="sep" placeholder="September">
+
+            <input type="number" id="oct" placeholder="October">
+            <input type="number" id="nov" placeholder="November">
+            <input type="number" id="dec" placeholder="December">
+
+        </div>
+
+        <br>
+
+        <button onclick="updateDashboard()">
+            Update Dashboard
+        </button>
+
+    </section>
+
+    <section class="section">
+
+        <h2>Revenue Trend Analysis</h2>
+
+        <canvas id="revenueChart"></canvas>
+
+    </section>
+
+    <section class="section">
+
+        <h2>Executive Summary</h2>
+
+        <div id="summaryBox">
+
+            Enter monthly revenues and click
+            "Update Dashboard".
+
+        </div>
+
+    </section>
+
+</main>
+```
+
+</div>
+
+<script src="assets/js/dashboard.js"></script>
+
+</body>
+</html>

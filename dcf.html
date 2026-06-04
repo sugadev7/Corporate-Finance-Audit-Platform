@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+
+<meta name="viewport"
+   content="width=device-width, initial-scale=1.0">
+
+<title>DCF Valuation</title>
+
+<link rel="stylesheet"
+      href="assets/css/style.css">
+
+</head>
+
+<body>
+
+<div class="container">
+
+```
+<aside class="sidebar">
+
+    <div class="logo">
+        FinanceHub
+    </div>
+
+    <ul>
+
+        <li><a href="index.html">📊 Dashboard</a></li>
+
+        <li><a href="budget.html">💰 Budget vs Actual</a></li>
+
+        <li><a href="audit.html">🏦 Audit Tracker</a></li>
+
+        <li><a href="reports.html">📑 Reports</a></li>
+
+        <li><a href="dcf.html">📈 DCF Valuation</a></li>
+
+    </ul>
+
+</aside>
+
+<main class="main">
+
+    <div class="page-header">
+
+        <h1>DCF Valuation Calculator</h1>
+
+        <p>
+            Corporate Finance | Valuation | FP&A
+        </p>
+
+    </div>
+
+    <section class="section">
+
+        <h2>Valuation Inputs</h2>
+
+        <div class="form-grid">
+
+            <input
+            type="number"
+            id="revenue"
+            placeholder="Current Revenue">
+
+            <input
+            type="number"
+            id="growth"
+            placeholder="Growth Rate (%)">
+
+            <input
+            type="number"
+            id="margin"
+            placeholder="EBITDA Margin (%)">
+
+            <input
+            type="number"
+            id="tax"
+            placeholder="Tax Rate (%)">
+
+            <input
+            type="number"
+            id="wacc"
+            placeholder="WACC (%)">
+
+            <input
+            type="number"
+            id="terminal"
+            placeholder="Terminal Growth (%)">
+
+        </div>
+
+        <br>
+
+        <button onclick="calculateDCF()">
+            Calculate Valuation
+        </button>
+
+    </section>
+
+    <section class="cards">
+
+        <div class="card">
+
+            <h3>Enterprise Value</h3>
+
+            <p id="evCard">₹0</p>
+
+        </div>
+
+        <div class="card">
+
+            <h3>Projected FCF</h3>
+
+            <p id="fcfCard">₹0</p>
+
+        </div>
+
+        <div class="card">
+
+            <h3>Terminal Value</h3>
+
+            <p id="tvCard">₹0</p>
+
+        </div>
+
+        <div class="card">
+
+            <h3>Intrinsic Value</h3>
+
+            <p id="valueCard">₹0</p>
+
+        </div>
+
+    </section>
+
+    <section class="section">
+
+        <h2>DCF Summary</h2>
+
+        <div id="dcfSummary">
+
+            Enter assumptions and calculate.
+
+        </div>
+
+    </section>
+
+</main>
+```
+
+</div>
+
+<script src="assets/js/dcf.js"></script>
+
+</body>
+
+</html>

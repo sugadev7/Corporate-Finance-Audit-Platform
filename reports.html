@@ -1,0 +1,346 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+
+```
+<meta charset="UTF-8">
+
+<meta name="viewport"
+      content="width=device-width, initial-scale=1.0">
+
+<title>Executive Reports</title>
+
+<link rel="stylesheet"
+      href="assets/css/style.css">
+```
+
+</head>
+
+<body>
+
+<div class="container">
+
+```
+<aside class="sidebar">
+
+    <div class="logo">
+        FinanceHub
+    </div>
+
+    <ul>
+
+       <li><a href="index.html">📊 Dashboard</a></li>
+       <li><a href="budget.html">💰 Budget vs Actual</a></li>
+       <li><a href="audit.html">🏦 Audit Tracker</a></li>
+       <li><a href="dcf.html">📈 DCF Valuation</a></li>
+       <li><a href="reports.html">📑 Reports</a></li>
+    </ul>
+
+</aside>
+
+<main class="main">
+
+    <div class="page-header">
+
+        <h1>Executive Management Reports</h1>
+
+        <p>
+            Corporate Finance & Audit Intelligence Platform
+        </p>
+
+    </div>
+
+    <section class="cards">
+
+    <div class="card">
+        <h3>Total Revenue</h3>
+        <p id="reportRevenue">₹0</p>
+    </div>
+
+    <div class="card">
+        <h3>EBITDA</h3>
+        <p id="reportEbitda">₹0</p>
+    </div>
+
+    <div class="card">
+        <h3>Audit Observations</h3>
+        <p id="reportAudit">0</p>
+    </div>
+
+    <div class="card">
+        <h3>Enterprise Value</h3>
+        <p id="reportEV">₹0</p>
+    </div>
+
+</section>
+
+    <section class="section">
+
+        <h2>Executive Summary</h2>
+
+        <div id="executiveSummary">
+
+            No report generated.
+
+        </div>
+
+    </section>
+
+    <section class="section">
+
+        <h2>Management Actions</h2>
+
+        <ul>
+
+            <li>Monitor monthly revenue growth.</li>
+
+            <li>Review budget variances regularly.</li>
+
+            <li>Track high-risk audit observations.</li>
+
+            <li>Improve EBITDA margin and cash flow.</li>
+
+            <li>Strengthen compliance controls.</li>
+
+        </ul>
+
+    </section>
+
+    <section class="section">
+
+        <button onclick="generateReport()">
+            Generate Report
+        </button>
+
+        <button onclick="exportExcel()">
+            Export Excel Report
+        </button>
+
+        <button onclick="window.print()">
+            Print Report
+        </button>
+
+    </section>
+
+</main>
+```
+
+</div>
+
+<script>
+
+function generateReport() {
+
+    const dashboardData =
+        JSON.parse(
+            localStorage.getItem("dashboardData")
+        ) || {};
+
+    const dcfData =
+        JSON.parse(
+            localStorage.getItem("dcfData")
+        ) || {};
+
+    const totalRevenue =
+        (dashboardData.jan || 0) +
+        (dashboardData.feb || 0) +
+        (dashboardData.mar || 0) +
+        (dashboardData.apr || 0) +
+        (dashboardData.may || 0) +
+        (dashboardData.jun || 0) +
+        (dashboardData.jul || 0) +
+        (dashboardData.aug || 0) +
+        (dashboardData.sep || 0) +
+        (dashboardData.oct || 0) +
+        (dashboardData.nov || 0) +
+        (dashboardData.dec || 0);
+
+    const ebitda =
+        Math.round(totalRevenue * 0.18);
+
+    const cashFlow =
+        Math.round(ebitda * 0.85);
+
+    const auditData =
+        JSON.parse(
+            localStorage.getItem(
+                "auditObservations"
+            )
+        ) || [];
+
+    const totalAudit =
+        auditData.length;
+
+    const highRisk =
+        auditData.filter(
+            item => item.risk === "High"
+        ).length;
+
+    document.getElementById(
+        "reportRevenue"
+    ).innerText =
+        "₹" +
+        totalRevenue.toLocaleString("en-IN");
+
+    document.getElementById(
+        "reportEbitda"
+    ).innerText =
+        "₹" +
+        ebitda.toLocaleString("en-IN");
+
+    document.getElementById(
+        "reportAudit"
+    ).innerText =
+        totalAudit;
+
+    document.getElementById(
+        "reportEV"
+    ).innerText =
+        "₹" +
+        Math.round(
+            dcfData.enterpriseValue || 0
+        ).toLocaleString("en-IN");
+
+    document.getElementById(
+        "executiveSummary"
+    ).innerHTML = `
+
+        <strong>Total Revenue:</strong>
+        ₹${totalRevenue.toLocaleString("en-IN")}
+
+        <br><br>
+
+        <strong>EBITDA:</strong>
+        ₹${ebitda.toLocaleString("en-IN")}
+
+        <br><br>
+
+        <strong>Cash Flow:</strong>
+        ₹${cashFlow.toLocaleString("en-IN")}
+
+        <br><br>
+
+        <strong>Total Audit Observations:</strong>
+        ${totalAudit}
+
+        <br><br>
+
+        <strong>High Risk Observations:</strong>
+        ${highRisk}
+
+        <br><br>
+
+        <strong>Enterprise Value:</strong>
+        ₹${Math.round(
+            dcfData.enterpriseValue || 0
+        ).toLocaleString("en-IN")}
+
+        <br><br>
+
+        <strong>Management Insight:</strong>
+
+        Revenue growth, profitability,
+        valuation metrics and audit
+        compliance should be monitored
+        together to maximize shareholder
+        value.
+
+    `;
+}
+
+function exportExcel() {
+
+    const dashboardData =
+        JSON.parse(
+            localStorage.getItem("dashboardData")
+        ) || {};
+
+    const dcfData =
+        JSON.parse(
+            localStorage.getItem("dcfData")
+        ) || {};
+
+    const auditData =
+        JSON.parse(
+            localStorage.getItem(
+                "auditObservations"
+            )
+        ) || [];
+
+    const totalRevenue =
+        (dashboardData.jan || 0) +
+        (dashboardData.feb || 0) +
+        (dashboardData.mar || 0) +
+        (dashboardData.apr || 0) +
+        (dashboardData.may || 0) +
+        (dashboardData.jun || 0) +
+        (dashboardData.jul || 0) +
+        (dashboardData.aug || 0) +
+        (dashboardData.sep || 0) +
+        (dashboardData.oct || 0) +
+        (dashboardData.nov || 0) +
+        (dashboardData.dec || 0);
+
+    const ebitda =
+        Math.round(totalRevenue * 0.18);
+
+    const cashFlow =
+        Math.round(ebitda * 0.85);
+
+    const highRisk =
+        auditData.filter(
+            item => item.risk === "High"
+        ).length;
+
+    const enterpriseValue =
+        Math.round(
+            dcfData.enterpriseValue || 0
+        );
+
+    const csv =
+`Metric,Value
+Total Revenue,${totalRevenue}
+EBITDA,${ebitda}
+Cash Flow,${cashFlow}
+Audit Observations,${auditData.length}
+High Risk Observations,${highRisk}
+Enterprise Value,${enterpriseValue}`;
+
+    const blob =
+        new Blob(
+            [csv],
+            {
+                type: "text/csv;charset=utf-8;"
+            }
+        );
+
+    const url =
+        URL.createObjectURL(blob);
+
+    const link =
+        document.createElement("a");
+
+    link.href = url;
+
+    link.download =
+        "FinanceHub_Executive_Report.csv";
+
+    document.body.appendChild(link);
+
+    link.click();
+
+    document.body.removeChild(link);
+
+    URL.revokeObjectURL(url);
+
+    alert(
+        "Executive Report Exported Successfully!"
+    );
+}
+
+</script>
+
+</body>
+</html>

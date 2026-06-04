@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+
+```
+<meta charset="UTF-8">
+
+<meta name="viewport"
+      content="width=device-width, initial-scale=1.0">
+
+<title>Budget vs Actual Analysis</title>
+
+<link rel="stylesheet"
+      href="assets/css/style.css">
+```
+
+</head>
+
+<body>
+
+<div class="container">
+
+```
+<aside class="sidebar">
+
+    <div class="logo">
+        FinanceHub
+    </div>
+
+    <ul>
+
+        <li><a href="index.html">📊 Dashboard</a></li>
+
+        <li><a href="budget.html">💰 Budget vs Actual</a></li>
+
+        <li><a href="audit.html">🏦 Audit Tracker</a></li>
+
+        <li><a href="reports.html">📑 Reports</a></li>
+
+    </ul>
+
+</aside>
+
+<main class="main">
+
+    <div class="page-header">
+
+        <h1>Budget vs Actual Analysis</h1>
+
+        <p>
+            FP&A Planning | Variance Analysis | Annual Budget Monitoring
+        </p>
+
+    </div>
+
+    <section class="section">
+
+        <h2>Budget vs Actual Table</h2>
+
+        <table>
+
+            <thead>
+
+                <tr>
+                    <th>Month</th>
+                    <th>Budget (₹)</th>
+                    <th>Actual (₹)</th>
+                    <th>Variance (₹)</th>
+                    <th>Variance %</th>
+                </tr>
+
+            </thead>
+
+            <tbody>
+
+                <tr><td>Jan</td><td><input type="number" id="bJan"></td><td><input type="number" id="aJan"></td><td id="vJan">0</td><td id="pJan">0%</td></tr>
+
+                <tr><td>Feb</td><td><input type="number" id="bFeb"></td><td><input type="number" id="aFeb"></td><td id="vFeb">0</td><td id="pFeb">0%</td></tr>
+
+                <tr><td>Mar</td><td><input type="number" id="bMar"></td><td><input type="number" id="aMar"></td><td id="vMar">0</td><td id="pMar">0%</td></tr>
+
+                <tr><td>Apr</td><td><input type="number" id="bApr"></td><td><input type="number" id="aApr"></td><td id="vApr">0</td><td id="pApr">0%</td></tr>
+
+                <tr><td>May</td><td><input type="number" id="bMay"></td><td><input type="number" id="aMay"></td><td id="vMay">0</td><td id="pMay">0%</td></tr>
+
+                <tr><td>Jun</td><td><input type="number" id="bJun"></td><td><input type="number" id="aJun"></td><td id="vJun">0</td><td id="pJun">0%</td></tr>
+
+                <tr><td>Jul</td><td><input type="number" id="bJul"></td><td><input type="number" id="aJul"></td><td id="vJul">0</td><td id="pJul">0%</td></tr>
+
+                <tr><td>Aug</td><td><input type="number" id="bAug"></td><td><input type="number" id="aAug"></td><td id="vAug">0</td><td id="pAug">0%</td></tr>
+
+                <tr><td>Sep</td><td><input type="number" id="bSep"></td><td><input type="number" id="aSep"></td><td id="vSep">0</td><td id="pSep">0%</td></tr>
+
+                <tr><td>Oct</td><td><input type="number" id="bOct"></td><td><input type="number" id="aOct"></td><td id="vOct">0</td><td id="pOct">0%</td></tr>
+
+                <tr><td>Nov</td><td><input type="number" id="bNov"></td><td><input type="number" id="aNov"></td><td id="vNov">0</td><td id="pNov">0%</td></tr>
+
+                <tr><td>Dec</td><td><input type="number" id="bDec"></td><td><input type="number" id="aDec"></td><td id="vDec">0</td><td id="pDec">0%</td></tr>
+
+            </tbody>
+
+        </table>
+
+        <br>
+
+        <button onclick="calculateVariance()">
+            Calculate Variance
+        </button>
+
+    </section>
+
+    <section class="section">
+
+        <h2>Annual Budget Summary</h2>
+
+        <div id="budgetSummary">
+
+            Enter Budget and Actual values, then click
+            "Calculate Variance".
+
+        </div>
+
+    </section>
+
+</main>
+```
+
+</div>
+
+<script src="assets/js/budget.js"></script>
+
+</body>
+</html>

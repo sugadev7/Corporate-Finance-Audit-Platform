@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Concurrent Audit Tracker</title>
+
+<link rel="stylesheet" href="assets/css/style.css">
+
+</head>
+
+<body>
+
+<div class="container">
+
+```
+<aside class="sidebar">
+
+    <div class="logo">
+        FinanceHub
+    </div>
+
+    <ul>
+        <li><a href="index.html">📊 Dashboard</a></li>
+        <li><a href="budget.html">💰 Budget vs Actual</a></li>
+        <li><a href="audit.html">🏦 Audit Tracker</a></li>
+        <li><a href="reports.html">📑 Reports</a></li>
+    </ul>
+
+</aside>
+
+<main class="main">
+
+    <div class="page-header">
+
+        <h1>Concurrent Audit Observation Tracker</h1>
+
+        <p>
+            Banking Audit | Risk Monitoring | Observation Management
+        </p>
+
+    </div>
+
+    <section class="section">
+
+        <h2>Add Audit Observation</h2>
+
+        <div class="form-grid">
+
+            <input
+            type="date"
+            id="auditDate">
+
+            <select id="category">
+
+                <option value="KYC">KYC</option>
+                <option value="AML">AML</option>
+                <option value="Cash">Cash</option>
+                <option value="Loans">Loans</option>
+                <option value="Documentation">Documentation</option>
+                <option value="Revenue Leakage">Revenue Leakage</option>
+
+            </select>
+
+            <input
+            type="text"
+            id="observation"
+            placeholder="Audit Observation">
+
+            <input
+            type="text"
+            id="branch"
+            placeholder="Branch / Department">
+
+            <select id="risk">
+
+                <option value="Low">Low Risk</option>
+                <option value="Medium">Medium Risk</option>
+                <option value="High">High Risk</option>
+
+            </select>
+
+            <select id="status">
+
+                <option value="Open">Open</option>
+                <option value="In Progress">In Progress</option>
+                <option value="Closed">Closed</option>
+
+            </select>
+
+        </div>
+
+        <br>
+
+        <button onclick="addObservation()">
+            Add Observation
+        </button>
+
+    </section>
+
+    <section class="section">
+
+        <h2>Audit Observations Register</h2>
+
+        <table>
+
+            <thead>
+
+                <tr>
+
+                    <th>ID</th>
+                    <th>Date</th>
+                    <th>Category</th>
+                    <th>Observation</th>
+                    <th>Branch</th>
+                    <th>Risk</th>
+                    <th>Status</th>
+
+                </tr>
+
+            </thead>
+
+            <tbody id="auditTable">
+
+            </tbody>
+
+        </table>
+
+    </section>
+
+    <section class="section">
+
+        <h2>Audit Summary</h2>
+
+        <div id="auditSummary">
+
+            No observations recorded.
+
+        </div>
+
+    </section>
+
+</main>
+```
+
+</div>
+
+<script src="assets/js/audit.js"></script>
+
+</body>
+</html>
